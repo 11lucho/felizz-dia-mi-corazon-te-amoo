@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selección de Fecha</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page1">
+  <div class="full-image">
+    <img src="images/1era_pagina.png" alt="Selecciona la fecha" />
+    <!-- CANDADO SOBRE LA FRANJA ROJA -->
+    <div id="lock">🔒</div>
+  </div>
+
+  <div class="form-container">
+    <label for="fecha">Escribe tu respuesta...</label>
+    <input
+      type="text"
+      id="fecha"
+      placeholder="Escribe tu respuesta..."
+      value=""
+    />
+    <button id="confirmBtn">Confirmar</button>
+  </div>
+
+  <!-- MÚSICA DE FONDO -->
+  <audio id="bgMusic" src="audio/romantic.mp3" autoplay loop></audio>
+
+  <script>
+    const lock = document.getElementById('lock');
+    document.getElementById('confirmBtn').addEventListener('click', function() {
+      const val = document.getElementById('fecha').value.trim().toLowerCase();
+      if (val === '14 de abril de 2022') {
+        lock.classList.add('unlock');
+        setTimeout(() => {
+          window.location.href = 'page2.html';
+        }, 1000);
+      } else {
+        alert('Fecha incorrecta, intenta de vuelta.');
+      }
+    });
+  </script>
+</body>
+</html>
