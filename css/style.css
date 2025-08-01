@@ -1,1 +1,173 @@
+/* Reset básico */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+}
 
+/* ——— Página 1 ——— */
+.page1 .full-image {
+  position: relative;
+}
+
+.page1 .full-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page1 .form-container {
+  width: 90%;
+  max-width: 400px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.page1 .form-container label {
+  display: block;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.page1 .form-container input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.page1 .form-container button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #c0392b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.page1 .form-container button:hover {
+  background-color: #e74c3c;
+}
+
+/* ——— Candado ——— */
+#lock {
+  position: absolute;
+  left: 50%;
+  top: 85%; /* justo debajo de “pusimos de novio” */
+  transform: translate(-50%, -50%);
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  z-index: 10;
+  pointer-events: none;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+#lock.unlock {
+  animation: unlockAnim 1s ease forwards;
+}
+
+@keyframes unlockAnim {
+  to {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* ——— Página 2 ——— */
+.page2 {
+  position: relative;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.page2 .decor-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.page2 .decor {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.8;
+}
+
+.page2 .decor.heart {
+  top: 20px;
+  left: 20px;
+}
+
+.page2 .decor.butterfly {
+  top: 30px;
+  right: 30px;
+}
+
+.page2 .decor.flower {
+  bottom: 20px;
+  left: 40px;
+}
+
+.page2 .full-image img {
+  display: block;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.page2 .riddle-box {
+  background: #ffffff;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.page2 .riddle-box h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.page2 .riddle-box ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.page2 .riddle-box li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+.page2 .riddle-box button {
+  display: block;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #c0392b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.page2 .riddle-box button:hover {
+  background-color: #e74c3c;
+}
+
+/* ——— Audio oculto ——— */
+audio#bgMusic {
+  display: none;
+}
